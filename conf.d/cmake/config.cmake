@@ -51,7 +51,7 @@ set (PKG_REQUIRED_LIST
 
 # Print a helper message when every thing is finished
 # ----------------------------------------------------
-set( CLOSING_MESSAGE "Debug: ./src/pcscd-client --config=../test/simple-scard.json")
+set( CLOSING_MESSAGE "Debug: ./src/pcscd-client --verbose --config=../etc/simple-scard.json")
 
 # (BUG!!!) as PKG_CONFIG_PATH does not work [should be an env variable]
 # ---------------------------------------------------------------------
