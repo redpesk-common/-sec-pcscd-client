@@ -7,7 +7,7 @@ PROJECT_TARGET_ADD(pcscd-glue)
 	file(GLOB HEADERS_SRC *.h)
 
 	# Define project Targets
-    add_library(${TARGET_NAME} SHARED ${CSOURCES})
+    add_library(${TARGET_NAME} STATIC ${CSOURCES})
 
     # define extra dependencies
     pkg_check_modules (PCSC REQUIRED IMPORTED_TARGET libpcsclite)
