@@ -1,4 +1,4 @@
-# oidc-pcsc plugin
+# pcscd-client plugin
 
 ## Object
 
@@ -14,12 +14,19 @@ Relies on use-space pcscd resource manager to read/write NFC scard/token.
   * afb-libafb
   * librp-utils-devel
   * uthash-devel
+
+* pcscslite from source code
+  wget https://pcsclite.apdu.fr/files/pcsc-lite-2.0.0.tar.bz2
+  wget https://ccid.apdu.fr/files/ccid-1.5.4.tar.bz2
+
 * Blacklist default NFC kernel module
-  * sudo cp $SOURCES/libs/pcscd-client/test/nfc-blacklist.conf /etc/modprobe.d
+  * sudo cp $SOURCES/libs/pcscd-client/etc/nfc-blacklist.conf /etc/modprobe.d
   * rmmod nfc and dependencies (or reboot)
   * systemctl enable pcscd.service
+
 * Run pcscd manager
-  * foreground: sudo /usr/sbin/pcscd -f
+   Check pcscd as access to the reader and that no other process (ex: opensc, kernel module nfc ...) preempt it.
+  * foreground: sudo /usr/sbin/pcscd -d -f
   * background: systemctl start pcscd.service
 
 ## Supported readers/cards
@@ -43,7 +50,7 @@ The code was tested with Mifare classic tokens but pcsc-lite supports most of CC
 The simplest way to test your reader/token is to use pcsc-client with a custom config.json. Note that pcsc-client should be available for major Linux distributions.
 
 ```dotnetcli
- ~/$SOURCES/sec-gate-oidc/build> ./package/bin/pcsc-client --config=../src/idps-plugins/oidc-pcsc/test/simple-pcsc.json --group=0 --async --verbose
+ ~/$SOURCES/sec-gate-oidc/build> ./package/bin/pcsc-client --config=../src/idps-plugins/pcscd-client/test/simple-pcsc.json --group=0 --async --verbose
  -- Waiting: 1s events for reader=ACS ACR122U PICC Interface 00 00 (ctrl-C to quit)
  -- async: reader=ACS ACR122U PICC Interface 00 00 status=0x5e0012
  -- event: reader=ACS ACR122U PICC Interface 00 00 removed (waiting for new card)
@@ -63,7 +70,7 @@ Json configuration is organized in sections:
 
 ### Reader
 
-It is a subset of reader name. When multiple readers respond to the subset first reader found is used. When no reader name is provided, oidc-pcsc uses first available reader. As a result if your have only one reader you do not have to know its name.
+It is a subset of reader name. When multiple readers respond to the subset first reader found is used. When no reader name is provided, pcscd-client uses first available reader. As a result if your have only one reader you do not have to know its name.
 
 ```json
     // "ACR122U" for "ACS ACR122U PICC Interface 00 00"
@@ -90,7 +97,7 @@ Mifare-Classic support two keys A/B where both should have 6 bytes. Default keys
 
 ### Commands
 
-Each scard model has a private physical organization (page, sector, blocs, ...) as well as it own authentication and API capabilities. As said before oidc-pcsc was tested with Mifare-Classic, if you need to support a different card model you may have to tweak configuration and code. Note that commands are stored in order and pcsc-client execute then from config order.
+Each scard model has a private physical organization (page, sector, blocs, ...) as well as it own authentication and API capabilities. As said before pcscd-client was tested with Mifare-Classic, if you need to support a different card model you may have to tweak configuration and code. Note that commands are stored in order and pcsc-client execute then from config order.
 
 ```json
     "cmds": [
@@ -189,7 +196,7 @@ Note: the 'set-acls' command (group=2) should work for a new card. But after 1st
 }
 ```
 
-## OIDC-pcsc C/APIs
+## pcscd-client C/APIs
 
 ## Config APIs
 
