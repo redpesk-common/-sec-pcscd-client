@@ -16,11 +16,11 @@
 # limitations under the License.
 ###########################################################################
 
-set(CMAKE_INSTALL_SO_NO_EXE 0)
+#set(CMAKE_INSTALL_SO_NO_EXE 0)
 
 # Project Info
 # ------------------
-set(PROJECT_PRETTY_NAME "oidc-pcsc plugin for oidc-pcsc readers")
+set(PROJECT_PRETTY_NAME "pcscd-client sharelib for pcscd readers")
 set(PROJECT_DESCRIPTION "Provide pcsc-lite integration with AFB")
 set(PROJECT_URL "https://github.com/Tux-EVSE/lib-pcscs-client")
 set(PROJECT_ICON "icon.jpg")
@@ -35,7 +35,7 @@ set(PROJECT_CMAKE_CONF_DIR "conf.d")
 
 # Compilation Mode (DEBUG, RELEASE)
 # ----------------------------------
-set(BUILD_TYPE "DEBUG")
+set(CMAKE_BUILD_TYPE "DEBUG")
 
 # Compiler selection if needed. Impose a minimal version.
 # -----------------------------------------------
