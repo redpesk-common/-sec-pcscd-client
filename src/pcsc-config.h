@@ -35,6 +35,7 @@ typedef enum {
 
 typedef struct {
     const char *uid;
+    const char *info;
     const u_int8_t sec; // sector number (0 for mifare)
     const u_int8_t blk; // block number for NFC tag-2
     u_int8_t *data;
@@ -48,12 +49,12 @@ typedef struct {
 
 typedef struct {
     const char *uid;
+    const char *info;
     ulong magic;
     const char *reader;
     ulong timeout;
     int maxdev;
     int verbose;
-    const char *info;
     pcscCmdT *cmds;
     pcscKeyT *keys;
     pcscCmdT *hTable;
@@ -64,3 +65,5 @@ pcscCmdT *pcscCmdByUid (pcscConfigT *config, const char *cmdUid);
 int pcscExecOneCmd(pcscHandleT *handle, const pcscCmdT *cmd, u_int8_t *data);
 size_t pcscCmdDataLen(const pcscCmdT *cmd);
 pcscActionE pcscCmdAction(const pcscCmdT *cmd);
+const char* pcscCmdUid(const pcscCmdT *cmd);
+const char* pcscCmdInfo(const pcscCmdT *cmd);

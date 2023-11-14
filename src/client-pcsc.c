@@ -126,11 +126,15 @@ static int execGroupCmd (pcscHandleT *handle, pcscParamsT *params) {
     // loop on defined commands
     for (int idx=0; config->cmds[idx].uid; idx++) {
         const pcscCmdT *cmd= &config->cmds[idx];
-        u_int8_t data[cmd->dlen];
 
         if (params->group <= cmd->group*-1  || params->group == cmd->group) {
             jump=1;
-            err= pcscExecOneCmd (handle, cmd, data);
+            if (cmd->action == PCSC_ACTION_READ) {
+                u_int8_t data[cmd->dlen];
+                err= pcscExecOneCmd (handle, cmd, data);
+            } else {
+                err= pcscExecOneCmd (handle, cmd, NULL);
+            }
             if (err) {
                 fprintf (stderr, " -- Fail Executing command uid=%s error=%s\n", cmd->uid, pcscErrorMsg(handle));
                 if (!params->forced) goto OnErrorExit;

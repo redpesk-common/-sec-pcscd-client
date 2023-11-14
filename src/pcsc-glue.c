@@ -721,7 +721,7 @@ pcscHandleT *pcscConnect (const char*uid, const char *readerName) {
             }
         }
         if (handle->readerId < 0 ) {
-            EXT_CRITICAL ("[pcsc-reader-unknown] reader=%s", handle->readerName);
+            EXT_CRITICAL ("[pcsc-reader-unknown] uid=%s reader=%s", uid, readerName);
             if (handle->verbose) {
                 EXT_NOTICE ("-- reader list count=%ld", readerCount);
                 for (int jdx=0; jdx < readerCount-1; jdx++) {
