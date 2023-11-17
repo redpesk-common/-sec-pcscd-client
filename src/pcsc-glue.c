@@ -418,8 +418,8 @@ int pcscCardCheckAtr(pcscHandleT *handle)
         goto OnErrorExit;
     }
 
-    // use status to retreive smart cart ATR
-    rv = ScardState(handle->hCard, readerName, &readerLen, &readerState, &handle->activeProtocol, atrData, &atrLen);
+    // use status to retrieve smart cart ATR
+    rv = SCardStatus(handle->hCard, readerName, &readerLen, &readerState, &handle->activeProtocol, atrData, &atrLen);
     if (rv != SCARD_S_SUCCESS) {
         handle->error= pcsc_stringify_error(rv);
         goto OnErrorExit;
