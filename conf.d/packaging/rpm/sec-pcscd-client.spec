@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-Name: sec-pcscd-client
+Name: pcscs-client
 Version: 0.0.2
 Release: 2%{?dist}
 Summary: sample implementation for Smartcard/NFC-token authentication based on pcsc-lite.
