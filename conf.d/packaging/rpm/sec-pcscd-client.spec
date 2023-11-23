@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-Name: pcscs-client
+Name: sec-pcscd-client
 Version: 0.0.2
 Release: 2%{?dist}
 Summary: sample implementation for Smartcard/NFC-token authentication based on pcsc-lite.
@@ -46,9 +46,9 @@ cd build
 %cmake_install
 
 %files
-%dir %{_prefix}/redpesk/%{name}
-%{_prefix}/redpesk/%{name}/bin/pcscd-client
-%{_prefix}/redpesk/%{name}/*
+%dir %{_prefix}/redpesk/pcscs-client
+%{_prefix}/redpesk/pcscs-client/bin/pcscd-client
+%{_prefix}/redpesk/pcscs-client/*
 %{_prefix}/lib/libpcscd-glue.*
 
 %files devel
