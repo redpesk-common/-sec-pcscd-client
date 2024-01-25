@@ -153,7 +153,7 @@ OnErrorExit:
   fprintf(stderr, "usage: pcsc-client --config=/xxx/my-config.json [--async] "
                   "[--group=-+0-9] [--verbose] [--force] [--list] "
                   "[--reset=/dev/bus/usb/bus-xxx/dev-xxx]\n");
-  return NULL;
+  exit(0);
 }
 
 // execute commands from requested group
