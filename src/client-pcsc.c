@@ -136,7 +136,7 @@ pcscParamsT *parseArgs(int argc, char *argv[]) {
     case 'r':
       if (!optarg) goto OnErrorExit;
       usb_reset(optarg);
-      return NULL;
+      exit(0);
 
     case 'h':
     default:
