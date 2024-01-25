@@ -76,7 +76,7 @@ void usb_reset(char *usbdev) {
 
   printf("Trying to reset USB device %s\n", usbdev);
   // rc = ioctl(fd, USBDEVFS_RESET, 0);
-  rc = ioctl(fd, USBDEVFS_DISCONNECT, 0);
+  rc = ioctl(fd, USBDEVFS_RESET, 0);
   if (rc < 0) {
     perror("Fail to Reset usbdev");
     goto OnErrorExit;
