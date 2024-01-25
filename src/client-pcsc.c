@@ -74,13 +74,13 @@ void usb_reset(char *usbdev) {
     goto OnErrorExit;
   }
 
-  printf("Trying to reset USB device %s\n", usbdev);
-  // rc = ioctl(fd, USBDEVFS_RESET, 0);
+  printf("USB-Reset start device %s\n", usbdev);
   rc = ioctl(fd, USBDEVFS_RESET, 0);
   if (rc < 0) {
-    perror("Fail to Reset usbdev");
+    perror("Fail to Reset");
     goto OnErrorExit;
   }
+  printf("USB-Reset done dev:%s\n", usbdev);
   return;
 
 OnErrorExit:
