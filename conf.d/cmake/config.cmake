@@ -1,5 +1,5 @@
 ###########################################################################
-# Copyright 2015, 2016, 2017, 2018, 2019 IoT.bzh
+# Copyright 2015-2024 IoT.bzh
 #
 # author: Fulup Ar Foll <fulup@iot.bzh>
 #
@@ -15,23 +15,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###########################################################################
-
-#set(CMAKE_INSTALL_SO_NO_EXE 0)
-
-# Project Info
-# ------------------
-set(PROJECT_PRETTY_NAME "pcscd-client sharelib for pcscd readers")
-set(PROJECT_DESCRIPTION "Provide pcsc-lite integration with AFB")
-set(PROJECT_URL "https://github.com/Tux-EVSE/lib-pcscs-client")
-set(PROJECT_ICON "icon.jpg")
-set(PROJECT_AUTHOR "Iot-Team")
-set(PROJECT_AUTHOR_MAIL "secretariat@iot.bzh")
-set(PROJECT_LICENSE "Apache-2")
-#set(PROJECT_LANGUAGES C)
-set(PROJECT_VERSION 1.0)
-
-# Where are stored default templates files from submodule or subtree app-templates in your project tree
-set(PROJECT_CMAKE_CONF_DIR "conf.d")
 
 # Compilation Mode (DEBUG, RELEASE)
 # ----------------------------------
