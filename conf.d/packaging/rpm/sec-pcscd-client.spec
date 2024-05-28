@@ -36,20 +36,21 @@ sample implementation for Smartcard/NFC-token authentication based on pcsc-lite.
 %autosetup -p 1
 
 %build
-mkdir -p build
-cd build
-%cmake ../
+%cmake .
 %cmake_build
 
 %install
-cd build
 %cmake_install
 
 %files
+%dir %{_prefix}/redpesk
 %dir %{_prefix}/redpesk/pcscs-client
+%{_prefix}/redpesk/pcscs-client/config.xml
+%{_prefix}/redpesk/pcscs-client/icon.jpg
+%dir %{_prefix}/redpesk/pcscs-client/bin
 %{_prefix}/redpesk/pcscs-client/bin/pcscd-client
-%{_prefix}/redpesk/pcscs-client/*
 %{_prefix}/lib64/libpcscd-glue.*
+%{_bindir}/pcscd-client
 
 %files devel
 %{_prefix}/include/*.h
