@@ -19,7 +19,7 @@ BuildRequires: pkgconfig(libafb)
 BuildRequires: afm-rpm-macros
 BuildRequires: pkgconfig(afb-libhelpers)
 BuildRequires: pkgconfig(libpcsclite)
-BuildRequires:  uthash-devel
+BuildRequires: uthash-devel
 
 %description
 sample implementation for Smartcard/NFC-token authentication based on pcsc-lite.

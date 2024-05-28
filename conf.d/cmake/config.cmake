@@ -27,7 +27,7 @@ set(PROJECT_ICON "icon.jpg")
 set(PROJECT_AUTHOR "Iot-Team")
 set(PROJECT_AUTHOR_MAIL "secretariat@iot.bzh")
 set(PROJECT_LICENSE "Apache-2")
-set(PROJECT_LANGUAGES,"C")
+#set(PROJECT_LANGUAGES C)
 set(PROJECT_VERSION 1.0)
 
 # Where are stored default templates files from submodule or subtree app-templates in your project tree
