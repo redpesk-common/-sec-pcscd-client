@@ -1,5 +1,3 @@
-%global debug_package %{nil}
-
 Name: sec-pcscd-client
 Version: 0.0.2
 Release: 2%{?dist}
@@ -10,15 +8,12 @@ URL: http://git.ovh.iot/redpesk/redpesk-common/sec-pcscd-client.git
 Source0: %{name}-%{version}.tar.gz
 
 BuildRequires: cmake
-BuildRequires: automake
 BuildRequires: gcc
-BuildRequires: libtool
-BuildRequires: afb-cmake-modules
 BuildRequires: pkgconfig(afb-binding)
 BuildRequires: pkgconfig(libafb)
-BuildRequires: afm-rpm-macros
 BuildRequires: pkgconfig(afb-libhelpers)
 BuildRequires: pkgconfig(libpcsclite)
+BuildRequires: pkgconfig(json-c)
 BuildRequires: uthash-devel
 
 %description
@@ -43,12 +38,6 @@ sample implementation for Smartcard/NFC-token authentication based on pcsc-lite.
 %cmake_install
 
 %files
-%dir %{_prefix}/redpesk
-%dir %{_prefix}/redpesk/pcscs-client
-%{_prefix}/redpesk/pcscs-client/config.xml
-%{_prefix}/redpesk/pcscs-client/icon.jpg
-%dir %{_prefix}/redpesk/pcscs-client/bin
-%{_prefix}/redpesk/pcscs-client/bin/pcscd-client
 %{_prefix}/lib64/libpcscd-glue.*
 %{_bindir}/pcscd-client
 
