@@ -11,7 +11,6 @@ Relies on use-space pcscd resource manager to read/write NFC scard/token.
 * Libraries (with xxx-devel when building from sources)
   * pcsc-lite
   * pcsc-*ccid ???
-  * afb-libafb
   * librp-utils-devel
   * uthash-devel
 
