@@ -17,7 +17,6 @@
 #define _GNU_SOURCE
 
 #include "pcsc-config.h"
-#include <libafb/misc/afb-verbose.h>
 
 #include <assert.h>
 #include <rp-utils/rp-jsonc.h>

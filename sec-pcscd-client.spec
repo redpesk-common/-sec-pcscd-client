@@ -9,9 +9,7 @@ Source0: %{name}-%{version}.tar.gz
 
 BuildRequires: cmake
 BuildRequires: gcc
-BuildRequires: pkgconfig(afb-binding)
-BuildRequires: pkgconfig(libafb)
-BuildRequires: pkgconfig(afb-libhelpers)
+BuildRequires: pkgconfig(librp-utils)
 BuildRequires: pkgconfig(libpcsclite)
 BuildRequires: pkgconfig(json-c)
 BuildRequires: uthash-devel

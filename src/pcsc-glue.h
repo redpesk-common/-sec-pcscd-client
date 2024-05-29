@@ -25,17 +25,17 @@
 #define PCSC_MIFARE_KEY_LEN 6 // keyA/B len (byte)
 #define PCSC_MIFARE_ACL_LEN 3+1 // Access Control Bits len (3 bytes + 1 byte userdata)
 
-
 // redefine debug/log to avoid conflict
 #ifndef EXT_EMERGENCY
-#define EXT_EMERGENCY(...)            _LIBAFB_VERBOSE_(afb_Log_Level_Emergency, __VA_ARGS__)
-#define EXT_ALERT(...)                _LIBAFB_VERBOSE_(afb_Log_Level_Alert, __VA_ARGS__)
-#define EXT_CRITICAL(...)             _LIBAFB_VERBOSE_(afb_Log_Level_Critical, __VA_ARGS__)
-#define EXT_ERROR(...)                _LIBAFB_VERBOSE_(afb_Log_Level_Error, __VA_ARGS__)
-#define EXT_WARNING(...)              _LIBAFB_VERBOSE_(afb_Log_Level_Warning, __VA_ARGS__)
-#define EXT_NOTICE(...)               _LIBAFB_VERBOSE_(afb_Log_Level_Notice, __VA_ARGS__)
-#define EXT_INFO(...)                 _LIBAFB_VERBOSE_(afb_Log_Level_Info, __VA_ARGS__)
-#define EXT_DEBUG(...)                _LIBAFB_VERBOSE_(afb_Log_Level_Debug, __VA_ARGS__)
+#include <rp-utils/rp-verbose.h>
+#define EXT_EMERGENCY(...)            RP_EMERGENCY(__VA_ARGS__)
+#define EXT_ALERT(...)                RP_ALERT(__VA_ARGS__)
+#define EXT_CRITICAL(...)             RP_CRITICAL(__VA_ARGS__)
+#define EXT_ERROR(...)                RP_ERROR(__VA_ARGS__)
+#define EXT_WARNING(...)              RP_WARNING(__VA_ARGS__)
+#define EXT_NOTICE(...)               RP_NOTICE(__VA_ARGS__)
+#define EXT_INFO(...)                 RP_INFO(__VA_ARGS__)
+#define EXT_DEBUG(...)                RP_DEBUG(__VA_ARGS__)
 #endif
 
 typedef enum {

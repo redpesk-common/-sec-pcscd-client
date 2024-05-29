@@ -19,7 +19,6 @@
 
 pkg_check_modules(deps REQUIRED
     json-c
-    libafb>=5
     librp-utils
     libpcsclite
 )
