@@ -1,9 +1,9 @@
 Name: sec-pcscd-client
 Version: 0.0.2
 Release: 2%{?dist}
-Summary: sample implementation for Smartcard/NFC-token authentication based on pcsc-lite.
+Summary: Sample implementation for Smartcard/NFC-token authentication based on pcsc-lite
 
-License: Apache
+License:  Apache-1.0
 URL: http://git.ovh.iot/redpesk/redpesk-common/sec-pcscd-client.git
 Source0: %{name}-%{version}.tar.gz
 
@@ -18,8 +18,8 @@ BuildRequires: uthash-devel
 sample implementation for Smartcard/NFC-token authentication based on pcsc-lite.
 
 %package devel
-Summary:        sample implementation for Smartcard/NFC-token authentication based on pcsc-lite
-Requires:       %{name} = %{version}-%{release}
+Summary:  Sample implementation for Smartcard/NFC-token authentication based on pcsc-lite
+Requires: %{name} = %{version}-%{release}
 
 %description devel
 sample implementation for Smartcard/NFC-token authentication based on pcsc-lite.
